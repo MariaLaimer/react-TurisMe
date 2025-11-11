@@ -1,8 +1,25 @@
+label {
+  color: #193B88;
+  font-weight: bold; 
+  font-size: 1.1rem; 
+  display: block;    
+  margin-bottom: 5px;
+}
+
 .input {
-    color: #193B88;
-    border: 2px solid;
-    border-radius: 10px;
-    height: 45px;
-    padding: 10px 20px;
-    width: 100%;
+  color: #193B88;
+  border: 3px solid #193B88;
+  
+  border-radius: 10px;
+  height: 45px;
+  padding: 10px 20px;
+  width: 100%;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box; 
+}
+
+.input:focus {
+  outline: none;
+  border-color: #193B88;
+  box-shadow: 0 0 0 3px rgba(25, 59, 136, 0.4); /* Um brilho azul suave */
 }
