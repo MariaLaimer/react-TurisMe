@@ -1,32 +1,24 @@
-# Atitus Maps
+# Turis.Me 🗺 - Atitus Maps
 
-## Sobre o Projeto
+## Sobre o Projeto:
 
-O **Atitus Maps** é uma aplicação web que permite visualizar e cadastrar pontos geográficos em um mapa interativo. Usuários autenticados podem adicionar novos pontos clicando no mapa, que são salvos em um backend e exibidos para todos.
+O **Turis.Me - Atitus Maps** é uma aplicação web que permite visualizar e cadastrar pontos geográficos em um mapa interativo. Usuários autenticados podem adicionar novos pontos clicando no mapa, que são salvos em um backend e exibidos para todos. Aparência baseada no projeto de alta fidelidade realizado no Figma.
 
-## Como iniciar este exercício
+## Funcionalidades:
 
-Clique em **Copiar Exercício** e abra o link em uma nova aba.
+- Visualização de pontos cadastrados no mapa 📌.
+- Cadastro de novos pontos ao clicar no mapa 🌍.
+- Autenticação de usuários 👤.
+- Integração com Google Maps 📲.
 
-   <a id="copy-exercise" target="_blank" href="https://github.com/new?template_name=atitus-maps&template_owner=jaisonschmidt&name=atitus-maps&owner=%40me&visibility=public">
-      <img src="https://img.shields.io/badge/📠_Copiar_Exercício-008000" height="25pt"/>
-   </a>
-
-## Funcionalidades
-
-- Visualização de pontos cadastrados no mapa.
-- Cadastro de novos pontos ao clicar no mapa.
-- Autenticação de usuários.
-- Integração com Google Maps.
-
-## Dependências
+## Dependências:
 
 - [React](https://react.dev/)
 - [Vite](https://vitejs.dev/)
 - [@react-google-maps/api](https://www.npmjs.com/package/@react-google-maps/api)
 - [Axios](https://www.npmjs.com/package/axios)
 
-## Como rodar o projeto
+## Como rodar o Projeto:
 
 1. **Clone o repositório:**
    ```bash
