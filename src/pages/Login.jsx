@@ -58,7 +58,7 @@ export function Login() {
           {erro && <p style={{ color: "red" }}>{erro}</p>}
 
           <div className="text-center pt-4">
-            <Button type="submit">Acessar</Button>
+            <Button type="submit">Entrar</Button>
           </div>
         </form>
 
