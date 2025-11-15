@@ -1,7 +1,7 @@
 label {
   color: #193B88;
   font-weight: bold; 
-  font-size: 1rem; 
+  font-size: 2rem; 
   display: block;    
   margin-bottom: 5px;
 }
@@ -26,13 +26,12 @@ label {
   box-shadow: 0 0 0 3px rgba(25, 59, 136, 0.4); 
 }
 
-/* Placeholder color and visibility (make stronger and blue like the border) */
 .input::placeholder {
   color: #193B88;
-  opacity: 1; /* ensure it's visible */
+  opacity: 1; 
   font-weight: 600;
 }
-/* vendor prefixes for broader browser support */
+
 .input:-ms-input-placeholder { color: #193B88; opacity:1; }
 .input::-ms-input-placeholder { color: #193B88; opacity:1; }
 .input::-webkit-input-placeholder { color: #193B88; opacity:1; }

@@ -78,19 +78,17 @@ export function Register() {
                       <div className="pb-2.5">
                         <Input
                           placeholder="Número de telefone:"
-                          type="password"
+                          type="telephone"
                           required
-                          value={senha}
-                          onChange={e => setSenha(e.target.value)}
+                          onChange={e => setNumero(e.target.value)}
                         />
                       </div>
                       <div className="pb-2.5">
                         <Input
                           placeholder="Data de nascimento:"
-                          type="password"
+                          type="text"
                           required
-                          value={senha}
-                          onChange={e => setSenha(e.target.value)}
+                          onChange={e => (e.target.value)}
                         />
                       </div>
 

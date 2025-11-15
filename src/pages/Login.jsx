@@ -46,7 +46,7 @@ export function Login() {
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
-              <div className="pb-4">
+              <div className="pb-2">
                 <Input
                   placeholder="Senha:"
                   type="password"
@@ -54,6 +54,9 @@ export function Login() {
                   value={senha}
                   onChange={(e) => setSenha(e.target.value)}
                 />
+              </div>
+              <div className="pb-2 text-center">
+                <Link to="/forgot-password" className="text-white hover:underline text-sm">Esqueci minha senha</Link>
               </div>
               {erro && <p style={{ color: "#ffdede" }}>{erro}</p>}
 
