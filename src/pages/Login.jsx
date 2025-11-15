@@ -24,53 +24,51 @@ export function Login() {
   };
 
   return (
-    <>
-      <div className="max-w-md mx-auto p-4">
+    <div className="login-bg min-h-screen flex items-center justify-center">
+      <div className="w-full max-w-md mx-auto p-4 login-container-overlay rounded-lg shadow-lg">
         <div className="text-center">
           <Logo />
         </div>
 
-        <div className="pt-6 pb-4">
-          <Title title="Faça seu cadastro" />
+        <div className="pt-6 pb-6 text-center">
+          <Title title="Turis.me" />
         </div>
 
-        <form onSubmit={handleSubmit}>
-          <div className="pb-4">
-            <Input
-              label="Email"
-              placeholder="Digite seu email..."
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div className="pb-4">
-            <Input
-              label="Senha"
-              placeholder="Digite sua senha..."
-              type="password"
-              required
-              value={senha}
-              onChange={(e) => setSenha(e.target.value)}
-            />
-          </div>
-          {erro && <p style={{ color: "red" }}>{erro}</p>}
+        <div className="flex justify-center">
+          <div className="login-card">
+            <form onSubmit={handleSubmit}>
+              <div className="pb-4">
+                <Input
+                  placeholder="Usuário:"
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+              <div className="pb-4">
+                <Input
+                  placeholder="Senha:"
+                  type="password"
+                  required
+                  value={senha}
+                  onChange={(e) => setSenha(e.target.value)}
+                />
+              </div>
+              {erro && <p style={{ color: "#ffdede" }}>{erro}</p>}
 
-          <div className="text-center pt-4">
-            <Button type="submit">Entrar</Button>
-          </div>
-        </form>
+              <div className="text-center pt-4">
+                <Button type="submit">Entrar</Button>
+              </div>
+            </form>
 
-        <div className="text-center pt-8">
-          <Link
-            to="/register"
-            className="text-blue-600 hover:underline"
-          >
-            Faça seu cadastro
-          </Link>
+            <div className="text-center pt-6">
+              <span className="muted">Não tem uma conta? </span>
+              <Link to="/register" className="link-register">Crie uma!</Link>
+            </div>
+          </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

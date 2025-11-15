@@ -1,5 +1,7 @@
 .title {
-    color: #193B88;
-    font-size: 24px;
-    font-weight: bold;
+    color: rgba(11, 41, 60, 0.80);
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }

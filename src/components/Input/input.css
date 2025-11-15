@@ -1,19 +1,21 @@
 label {
   color: #193B88;
   font-weight: bold; 
-  font-size: 1.1rem; 
+  font-size: 1rem; 
   display: block;    
   margin-bottom: 5px;
 }
 
 .input {
+  background-color: rgb(223, 218, 218);
   color: #193B88;
   border: 3px solid #193B88;
-  
   border-radius: 10px;
-  height: 45px;
-  padding: 10px 20px;
-  width: 100%;
+  height: 36px;
+  padding: 8px 12px;
+  width: 86%;
+  display: block;
+  margin: 0 auto;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
   box-sizing: border-box; 
 }
@@ -21,5 +23,18 @@ label {
 .input:focus {
   outline: none;
   border-color: #193B88;
-  box-shadow: 0 0 0 3px rgba(25, 59, 136, 0.4); /* Um brilho azul suave */
+  box-shadow: 0 0 0 3px rgba(25, 59, 136, 0.4); 
 }
+
+/* Placeholder color and visibility (make stronger and blue like the border) */
+.input::placeholder {
+  color: #193B88;
+  opacity: 1; /* ensure it's visible */
+  font-weight: 600;
+}
+/* vendor prefixes for broader browser support */
+.input:-ms-input-placeholder { color: #193B88; opacity:1; }
+.input::-ms-input-placeholder { color: #193B88; opacity:1; }
+.input::-webkit-input-placeholder { color: #193B88; opacity:1; }
+.input::-moz-placeholder { color: #193B88; opacity:1; }
+.input:-moz-placeholder { color: #193B88; opacity:1; }

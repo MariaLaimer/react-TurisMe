@@ -1,21 +1,15 @@
 .logo {
-  background-color: #d9d9d9;
-  border-radius: 95px;
-  display: inline-block;
-  height: 190px;
-  width: 322px;
-  position: relative;
+  width: 270px;
+  height: 279px;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 }
 
-.logo .text-wrapper {
-  color: #000000;
-  font-family: "Noto Sans-Black", Helvetica;
-  font-size: 16px;
-  font-weight: 900;
-  left: 124px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 83px;
+.logo-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }

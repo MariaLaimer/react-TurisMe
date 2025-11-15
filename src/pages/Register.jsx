@@ -22,61 +22,93 @@ export function Register() {
     };
 
     return (
-        <>
-            <div className="max-w-md mx-auto p-4">
-                <div className="text-center">
-                    <Logo />
+        <div className="login-bg min-h-screen flex items-center justify-center">
+            <div className="w-full max-w-md mx-auto p-0 login-container-overlay rounded-lg shadow-lg">
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
+                  <div style={{ width: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                      <Logo />
+                  </div>
                 </div>
 
-                <div className="pt-6 pb-4">
-                    <Title title="Bem-vindo de volta" />
+                <div className="pt-1 pb-1 text-center">
+                  <div className="pt-1 pb-1 text-center">
+                      <Title title="Turis.me" />
+                  </div>
                 </div>
 
-                <form onSubmit={handleSubmit}>
-                    <div className="pb-4">
+                <div className="flex justify-center">
+                  <div className="login-card">
+                    <form onSubmit={handleSubmit}>
+                      <div className="pb-2.5">
                         <Input
-                            label="Nome"
-                            placeholder="Digite seu nome..."
-                            type="text"
-                            required
-                            value={name}
-                            onChange={e => setName(e.target.value)}
+                          placeholder="Nome:"
+                          type="text"
+                          required
+                          value={name}
+                          onChange={e => setName(e.target.value)}
                         />
-                    </div>
-                    <div className="pb-4">
+                      </div>
+                      <div className="pb-2.5">
                         <Input
-                            label="Email"
-                            placeholder="Digite seu email..."
-                            type="email"
-                            required
-                            value={email}
-                            onChange={e => setEmail(e.target.value)}
+                          placeholder="Email:"
+                          type="email"
+                          required
+                          value={email}
+                          onChange={e => setEmail(e.target.value)}
                         />
-                    </div>
-                    <div className="pb-4">
+                      </div>
+                      <div className="pb-2.5">
                         <Input
-                            label="Senha"
-                            placeholder="Digite sua senha..."
-                            type="password"
-                            required
-                            value={senha}
-                            onChange={e => setSenha(e.target.value)}
+                          placeholder="Senha:"
+                          type="password"
+                          required
+                          value={senha}
+                          onChange={e => setSenha(e.target.value)}
                         />
-                    </div>
+                      </div>
+                      <div className="pb-2.5">
+                        <Input
+                          placeholder="Confirmar senha:"
+                          type="password"
+                          required
+                          value={senha}
+                          onChange={e => setSenha(e.target.value)}
+                        />
+                      </div>
+                      <div className="pb-2.5">
+                        <Input
+                          placeholder="Número de telefone:"
+                          type="password"
+                          required
+                          value={senha}
+                          onChange={e => setSenha(e.target.value)}
+                        />
+                      </div>
+                      <div className="pb-2.5">
+                        <Input
+                          placeholder="Data de nascimento:"
+                          type="password"
+                          required
+                          value={senha}
+                          onChange={e => setSenha(e.target.value)}
+                        />
+                      </div>
 
-                    {erro && <p style={{ color: "red" }}>{erro}</p>}
+                      {erro && <p style={{ color: "#ffdede" }}>{erro}</p>}
 
-                    <div className="text-center pt-4">
-                        <Button type="submit">Cadastrar</Button>
-                    </div>
-                </form>
+                      <div className="text-center pt-3">
+                        <Button type="submit">Criar Conta</Button>
+                      </div>
+                    </form>
 
-                <div className="text-center pt-8">
-                    <Link to="/login" className="text-blue-600 hover:underline">
+                    <div className="text-center pt-3">
+                      <Link to="/login" className="text-white hover:underline">
                         Já tem cadastro? <strong>Faça Login</strong>
-                    </Link>
+                      </Link>
+                    </div>
+                  </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
