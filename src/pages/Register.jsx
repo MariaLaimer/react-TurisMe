@@ -86,9 +86,9 @@ export function Register() {
                       <div className="pb-2.5">
                         <Input
                           placeholder="Data de nascimento:"
-                          type="text"
+                          type="date"
                           required
-                          onChange={e => (e.target.value)}
+                          onChange={e => setDataNascimento(e.target.value)}
                         />
                       </div>
 
