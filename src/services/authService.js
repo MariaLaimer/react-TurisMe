@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-const API_URL = 'https://ripe-donella-atitus-fbbf314a.koyeb.app/auth';
+const API_URL = 'https://yearling-kakalina-turis-me-169e63c3.koyeb.app';
 
 export async function signIn(email, password) {
   try {
-    const response = await axios.post(`${API_URL}/signin`, { email, password });
+    const response = await axios.post(`${API_URL}/auth/signin`, { email, password });
     return response.data;
   } catch (error) {
     if (error.response) {
@@ -19,9 +19,9 @@ export async function signIn(email, password) {
   }
 }
 
-export async function signUp(name, email, password) {
+export async function signUp(name, email, password, phoneNumber, birthDate) {
   try {
-    const response = await axios.post(`${API_URL}/signup`, { name, email, password });
+    const response = await axios.post(`${API_URL}/auth/signup`, { name, email, password, phoneNumber, birthDate });
     return response.data;
   } catch (error) {
     if (error.response) {
