@@ -28,10 +28,14 @@ export function AuthProvider({ children }) {
 
 
   // Função para login
-  function login(responseUser) {
-    setToken(responseUser.token);
-    sessionStorage.setItem("user", JSON.stringify(responseUser));
-    setUser(responseUser);
+  function login(jwtString) {
+    setToken(jwtString);
+    sessionStorage.setItem("token", jwtString);
+
+    // Criamos um user básico só para manter compatibilidade
+    const userObj = { token: jwtString };
+    sessionStorage.setItem("user", JSON.stringify(userObj));
+    setUser(userObj);
 
   }
   // Salva no user sempre que atualizar a página
