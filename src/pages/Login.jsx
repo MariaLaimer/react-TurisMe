@@ -17,8 +17,6 @@ export function Login() {
     e.preventDefault();
     setErro("");
     setLoading(true);
-    login("Teste");
-    navigate("/map");
     try {
       const token = await signIn(email, senha);
       login(token);
