@@ -75,7 +75,7 @@ export const Map = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => setMenuOpen(v => !v);
 
-  const [isModalOpen, setIsModalOpen] = useState(false); // Modal de CRIAÇÃO
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [tempPoint, setTempPoint] = useState(null); 
   const [descriptionInput, setDescriptionInput] = useState("");
 
@@ -373,7 +373,6 @@ export const Map = () => {
             </div>
         )}
 
-        {/* --- 3. NOVO MODAL DE DELEÇÃO --- */}
         {isDeleteModalOpen && selectedMarker && (
             <div style={modalOverlayStyle}>
                 <div style={modalContentStyle}>
