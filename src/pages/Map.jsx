@@ -7,7 +7,7 @@ import { MainMenu } from "../components/MainMenu";
 
 const containerStyle = {
   width: "100%",
-  height: "100vh",
+  height: "100mv",
 };
 
 const defaultCenter = {
@@ -15,14 +15,14 @@ const defaultCenter = {
   lng: -46.633308,
 };
 
-// --- ESTILOS DO MODAL (Reforçados) ---
+
 const modalOverlayStyle = {
   position: 'fixed',
   top: 0,
   left: 0,
   right: 0,
   bottom: 0,
-  backgroundColor: 'rgba(0, 0, 0, 0.7)', // Um pouco mais escuro
+  backgroundColor: 'rgba(0, 0, 0, 0.7)',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
@@ -143,7 +143,6 @@ export const Map = () => {
       // O postPoint agora retorna { id, title, position: {lat, lng}, favorite }
       const savedPoint = await postPoint(token, newPointPayload);
       
-      // 🚨 CORREÇÃO CRÍTICA: Usamos o objeto direto do service, pois ele já está formatado
       setMarkers((prev) => [...prev, savedPoint]);
       
       // Fecha e limpa

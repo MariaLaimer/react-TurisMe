@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-
-
-export default function App() {
+export default function Loading() {
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const [isFading, setIsFading] = useState(false);
 
@@ -76,6 +74,7 @@ export default function App() {
             <div className="absolute bottom-6 right-6">
               {/* <Send size={32} color="black" strokeWidth={2} className="transform -rotate-12" /> */}
             </div>
+
           </div>
         </div>
 

@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Navbar, Logo, Title, Input, Button } from "../components";
 import { signIn } from "../services/authService";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import Loading from "./Loading";
-
 
 export function Login() {
   const [email, setEmail] = useState("");

@@ -1,23 +1,23 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
+import Loading from "../pages/Loading";
 
-// Criação do contexto
 const AuthContext = createContext();
 
-// Hook para usar o contexto
 export function useAuth() {
   return useContext(AuthContext);
 }
 
-// Provider do contexto
 export function AuthProvider({ children }) {
-  const [token, setToken] = useState(() => {
-    // Busca token do sessionStorage ao iniciar
-    return sessionStorage.getItem("token") || null;
-  }); 
 
   const [user, setUser] = useState({});
+  const [token, setToken] = useState(sessionStorage.getItem("token") || null);
+  const [isAuthReady, setIsAuthReady] = useState(false); // NOVO ESTADO
 
-  // Salva no sessionStorage sempre que token mudar
+
+  useEffect(() => {
+    setIsAuthReady(true); 
+  }, []); 
+
   useEffect(() => {
     if (token) {
       sessionStorage.setItem("token", token);
@@ -26,11 +26,13 @@ export function AuthProvider({ children }) {
     }
   }, [token]);
 
+
   // Função para login
   function login(responseUser) {
     setToken(responseUser.token);
     sessionStorage.setItem("user", JSON.stringify(responseUser));
     setUser(responseUser);
+
   }
   // Salva no user sempre que atualizar a página
   useEffect(() => {
@@ -43,8 +45,15 @@ export function AuthProvider({ children }) {
   },[]) 
  
   // Função para logout
+
   function logout() {
     setToken(null);
+  }
+
+  if (!isAuthReady) {
+    return (
+      <Loading/>
+    );
   }
 
   return (
