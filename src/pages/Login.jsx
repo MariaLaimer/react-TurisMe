@@ -3,6 +3,8 @@ import { Navbar, Logo, Title, Input, Button } from "../components";
 import { signIn } from "../services/authService";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import Loading from "./Loading";
+
 
 export function Login() {
   const [email, setEmail] = useState("");
@@ -10,20 +12,24 @@ export function Login() {
   const [erro, setErro] = useState("");
   const navigate = useNavigate();
   const { login } = useAuth();
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErro("");
+    setLoading(true);
     try {
       const token = await signIn(email, senha);
       login(token);
       navigate("/map");
     } catch (err) {
       setErro(err.message);
+      setLoading(false);
     }
   };
 
   return (
+    loading ? <Loading /> : (
     <div className="login-bg min-h-screen flex items-center justify-center">
       <div className="w-full max-w-md mx-auto p-4 login-container-overlay rounded-lg shadow-lg">
         <div className="text-center">
@@ -73,5 +79,6 @@ export function Login() {
         </div>
       </div>
     </div>
+    )
   );
 }

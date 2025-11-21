@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Send } from 'lucide-react';
+
+
 
 export default function App() {
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);

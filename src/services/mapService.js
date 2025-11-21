@@ -83,7 +83,7 @@ export async function updatePoint(token, id, data) {
 export async function toggleFavorite(token, id, isFavorite) {
   try {
     const action = isFavorite ? 'unfavorite' : 'favorite';
-    // POST para favoritar/desfavoritar
+    
     const response = await axios.post(`${BASE_URL}/${id}/${action}`, {}, getConfig(token));
     
    
