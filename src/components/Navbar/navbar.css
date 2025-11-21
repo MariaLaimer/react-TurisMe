@@ -1,4 +1,4 @@
-.navbar {
+/* .navbar {
     align-items: center;
     background-color: #000;
     color: #fff;
@@ -11,4 +11,104 @@
 .navbar .close {
     background-color: transparent;
     border: none;
+} */
+
+.navbar {
+    align-items: center;
+    background-color: #9ED9D9;
+    color: #D9D9D9;
+    display: flex;
+    font-size: 16px;
+    justify-content: space-between;
+    padding: 20px 40px;
+}
+
+.navbar .search {
+     cursor: pointer;
+     background-color: white;
+     display:flex;
+     align-items: center;
+     justify-content: center;
+     width: 48px;
+     height: 38px;
+     border-radius: 15px;
+     border:3px solid rgb(11, 41, 60);
+     
+}
+
+.navbar .menu {
+    cursor: pointer;
+    background-color: white;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius:100%;
+    box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.25);
+    
+ } 
+
+.navbar .avatar {
+    cursor: pointer;
+    background-color: white;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:100%;
+    width: 68px;
+    height: 68px;
+}
+
+.left-group {
+    display: flex;
+    align-items: center;
+    gap: 20px; 
+}
+
+.navbar .searchOpen
+{
+     cursor: pointer;
+     background-color: white;
+     display:flex;
+     align-items: center;
+     padding-left: 10px;
+     width: 200px;
+     height: 38px;
+     border-radius: 15px;
+     border:3px solid #0B293C;
+    
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchOpen {
+  padding-right: 35px; 
+  
+}
+
+.searchClear {
+  position: absolute;
+  right: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #0B293C;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.searchOpen::placeholder {
+  color: #0B293C;
+  opacity: 1;
+}
+
+.searchOpen:focus {
+  outline: none;
+  border: 3px solid #0B293C;
+  box-shadow: 0 0 6px rgba(11, 41, 60, 0.4);
 }

@@ -1,0 +1,127 @@
+/* Fundo escuro atrás do menu */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+  z-index: 90;
+}
+
+.menu-overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Menu lateral */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100vh;
+
+  background: #0B293CF2;
+  backdrop-filter: blur(1px);
+
+  padding: 20px;
+  z-index: 100;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: left 0.3s ease;
+
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.side-menu.open {
+  left: 0;
+}
+
+/* Header do usuário (compacto) */
+.menu-header {
+  width: 100%;
+  background: #173840;
+  padding: 10px 12px;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Avatar menor */
+.menu-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin: 0;
+}
+
+/* Nome do usuário */
+.menu-header h3 {
+  margin: 0;
+  font-size: 15px;
+  color: white;
+  font-weight: 500;
+}
+
+/* Itens do menu — clicáveis */
+.menu-item {
+  width: 100%;
+  padding: 15px;
+  background: #0B293CCC;
+  color: white;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  cursor: pointer;
+  box-shadow: inset 0 0 5px #00000050;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.menu-item.exit {
+  background: transparent;
+  border-left: 4px solid #fff;
+  padding-left: 10px;
+  cursor: pointer;
+  
+}
+
+/* Botão emergência — clicável */
+.menu-emergency {
+  margin-top: auto;
+  width: 100%;
+  background: #c62828;
+  color: white;
+  padding: 18px;
+  font-size: 25px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;             /* garante alinhamento horizontal */
+  align-items: center;       /* centraliza verticalmente */
+  justify-content: center;   /* texto + ícone centralizados */
+  gap: 15px;                 /* espaço entre o ícone e o texto */
+}
+
+.menu-avatar-icon {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 68px;
+  height: 68px;
+
+  border-radius: 100%;
+  cursor: pointer;
+}

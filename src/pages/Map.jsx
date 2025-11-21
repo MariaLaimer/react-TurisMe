@@ -3,6 +3,7 @@ import { Navbar } from "../components";
 import { GoogleMap, Marker, useJsApiLoader, InfoWindow } from "@react-google-maps/api";
 import { getPoints, postPoint, deletePoint, updatePoint, toggleFavorite } from '../services/mapService'; 
 import { useAuth } from "../contexts/AuthContext";
+import { MainMenu } from "../components/MainMenu";
 
 const containerStyle = {
   width: "100%",
@@ -67,10 +68,12 @@ const buttonStyle = {
 };
 
 export const Map = () => {
-  const { token } = useAuth();
+  const { token, user, logout } = useAuth();
   const [markers, setMarkers] = useState([]);
   const [center, setCenter] = useState(defaultCenter);
   const [selectedMarker, setSelectedMarker] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const toggleMenu = () => setMenuOpen(v => !v);
 
   // Estados do Modal
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -214,7 +217,20 @@ export const Map = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar onMenuClick={toggleMenu} />
+            <MainMenu
+        open={menuOpen}
+        onClose={() => setMenuOpen(false)}
+        user={user}
+
+        onLogout={logout}
+        onProfile={() => alert("Ir para Meu Perfil Viajante")}
+        onConfig={() => alert("Ir para Configurações")}
+        onPrivacy={() => alert("Ir para Dados e Privacidade")}
+        onHelp={() => alert("Ir para Sobre e Ajuda")}
+        onEmergency={() => alert("Chamando emergência...")}
+      />
+
       <div style={{ width: "100%", height: "100vh", position: "relative" }}>
         {isLoaded ? (
           <GoogleMap

@@ -13,7 +13,9 @@ export function AuthProvider({ children }) {
   const [token, setToken] = useState(() => {
     // Busca token do sessionStorage ao iniciar
     return sessionStorage.getItem("token") || null;
-  });
+  }); 
+
+  const [user, setUser] = useState({});
 
   // Salva no sessionStorage sempre que token mudar
   useEffect(() => {
@@ -25,17 +27,28 @@ export function AuthProvider({ children }) {
   }, [token]);
 
   // Função para login
-  function login(newToken) {
-    setToken(newToken);
+  function login(responseUser) {
+    setToken(responseUser.token);
+    sessionStorage.setItem("user", JSON.stringify(responseUser));
+    setUser(responseUser);
   }
+  // Salva no user sempre que atualizar a página
+  useEffect(() => {
+    if (user.token) return;
+    const storedUser = sessionStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
 
+  },[]) 
+ 
   // Função para logout
   function logout() {
     setToken(null);
   }
 
   return (
-    <AuthContext.Provider value={{ token, login, logout }}>
+    <AuthContext.Provider value={{ token, login, logout, user }}>
       {children}
     </AuthContext.Provider>
   );

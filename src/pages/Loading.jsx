@@ -74,7 +74,7 @@ export default function App() {
             </p>
 
             <div className="absolute bottom-6 right-6">
-              <Send size={32} color="black" strokeWidth={2} className="transform -rotate-12" />
+              {/* <Send size={32} color="black" strokeWidth={2} className="transform -rotate-12" /> */}
             </div>
           </div>
         </div>
