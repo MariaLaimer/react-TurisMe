@@ -67,6 +67,46 @@ const buttonStyle = {
   transition: 'background-color 0.2s'
 };
 
+// Inline styles for action buttons (keeps changes local to this file)
+const actionBtnBase = {
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '8px',
+    padding: '8px 10px',
+    borderRadius: '8px',
+    fontWeight: 600,
+    border: 'none',
+    cursor: 'pointer',
+    transition: 'transform 0.08s ease, box-shadow 0.12s ease',
+};
+
+const btnLightBlue = {
+    background: 'linear-gradient(180deg, #A4D9D9 0%, #7FD6E6 100%)',
+    color: '#04293A',
+    boxShadow: '0 4px 12px rgba(124,208,214,0.18)'
+};
+
+const btnDarkBlue = {
+    background: 'linear-gradient(180deg, #0B293C 0%, #0F144E 100%)',
+    color: '#ffffff',
+    boxShadow: '0 4px 18px rgba(11,41,60,0.28)'
+};
+
+const btnGreen = {
+    background: 'linear-gradient(180deg, #92ED69 0%, #58C24A 100%)',
+    color: '#04293A',
+    boxShadow: '0 4px 14px rgba(82,197,97,0.18)'
+};
+
+const iconBtnStyle = {
+    padding: '6px 8px',
+    borderRadius: '8px',
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center'
+};
+
 export const Map = () => {
   const { token, user, logout } = useAuth();
   const [markers, setMarkers] = useState([]);
@@ -75,7 +115,7 @@ export const Map = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => setMenuOpen(v => !v);
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); // Modal de CRIAÇÃO
   const [tempPoint, setTempPoint] = useState(null); 
   const [descriptionInput, setDescriptionInput] = useState("");
 
@@ -276,19 +316,48 @@ export const Map = () => {
                 position={selectedMarker.position}
                 onCloseClick={() => setSelectedMarker(null)}
               >
-                <div style={{ minWidth: '150px', textAlign: 'center' }}>
-                  <h3 style={{ margin: '0 0 10px 0', fontSize: '16px' }}>
-                    {selectedMarker.title} {selectedMarker.favorite && "⭐"}
-                  </h3>
-                  <div style={{ display: 'flex', justifyContent: 'center', gap: '5px' }}>
-                    {/* CHAMAM OS MODAIS */}
-                    <button onClick={openEditModal} title="Editar">✏️</button>
-                    <button onClick={handleFavorite} title="Favoritar">
-                        {selectedMarker.favorite ? "💔" : "❤️"}
-                    </button>
-                    <button onClick={openDeleteModal} title="Deletar">🗑️</button>
-                  </div>
-                </div>
+                    <div style={{ minWidth: '170px', textAlign: 'center' }}>
+                        <h3 style={{ margin: '0 0 10px 0', fontSize: '16px', fontWeight: 700 }}>
+                            {selectedMarker.title} {selectedMarker.favorite && "⭐"}
+                        </h3>
+                        <div style={{ display: 'flex', gap: '8px', justifyContent: 'center' }}>
+                            {/* Editar */}
+                            <button
+                                onClick={openEditModal}
+                                title="Editar"
+                                aria-label="Editar"
+                                style={{ ...actionBtnBase, ...btnLightBlue }}
+                                onMouseDown={(e) => e.currentTarget.style.transform = 'translateY(1px)'}
+                                onMouseUp={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+                            >
+                                ✏️ Editar
+                            </button>
+
+                            {/* Favoritar */}
+                            <button
+                                onClick={handleFavorite}
+                                title="Favoritar"
+                                aria-label="Favoritar"
+                                style={{ ...actionBtnBase, ...iconBtnStyle, ...(selectedMarker.favorite ? btnDarkBlue : btnGreen) }}
+                                onMouseDown={(e) => e.currentTarget.style.transform = 'translateY(1px)'}
+                                onMouseUp={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+                            >
+                                {selectedMarker.favorite ? '💚 Favorito' : '🤍 Favoritar'}
+                            </button>
+
+                            {/* Deletar */}
+                            <button
+                                onClick={openDeleteModal}
+                                title="Deletar"
+                                aria-label="Deletar"
+                                style={{ ...actionBtnBase, ...btnDarkBlue }}
+                                onMouseDown={(e) => e.currentTarget.style.transform = 'translateY(1px)'}
+                                onMouseUp={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+                            >
+                                🗑️ Excluir
+                            </button>
+                        </div>
+                    </div>
               </InfoWindow>
             )}
           </GoogleMap>
@@ -318,20 +387,14 @@ export const Map = () => {
                 />
               </div>
 
-              <div style={buttonContainerStyle}>
-                <button 
-                  onClick={handleCancelCreate} 
-                  style={{ ...buttonStyle, backgroundColor: '#e0e0e0', color: '#333' }}
-                >
-                  Cancelar
-                </button>
-                <button 
-                  onClick={handleConfirmCreate} 
-                  style={{ ...buttonStyle, backgroundColor: '#4285F4', color: 'white' }}
-                >
-                  Salvar
-                </button>
-              </div>
+                                <div style={buttonContainerStyle}>
+                                    <button onClick={handleCancelCreate} style={{ ...actionBtnBase, backgroundColor: '#e6e6e6', color: '#333' }}>
+                                        Cancelar
+                                    </button>
+                                    <button onClick={handleConfirmCreate} style={{ ...actionBtnBase, ...btnDarkBlue }}>
+                                        Salvar
+                                    </button>
+                                </div>
             </div>
           </div>
         )}
@@ -356,16 +419,10 @@ export const Map = () => {
                     </div>
                     
                     <div style={buttonContainerStyle}>
-                        <button 
-                            onClick={handleCancelEdit} 
-                            style={{ ...buttonStyle, backgroundColor: '#e0e0e0', color: '#333' }}
-                        >
+                        <button onClick={handleCancelEdit} style={{ ...actionBtnBase, backgroundColor: '#e6e6e6', color: '#333' }}>
                             Cancelar
                         </button>
-                        <button 
-                            onClick={handleConfirmEdit} 
-                            style={{ ...buttonStyle, backgroundColor: '#FFC107', color: '#333' }}
-                        >
+                        <button onClick={handleConfirmEdit} style={{ ...actionBtnBase, ...btnDarkBlue }}>
                             Salvar Alteração
                         </button>
                     </div>
@@ -373,6 +430,7 @@ export const Map = () => {
             </div>
         )}
 
+        {/* --- 3. NOVO MODAL DE DELEÇÃO --- */}
         {isDeleteModalOpen && selectedMarker && (
             <div style={modalOverlayStyle}>
                 <div style={modalContentStyle}>
@@ -383,16 +441,10 @@ export const Map = () => {
                     </p>
                     
                     <div style={buttonContainerStyle}>
-                        <button 
-                            onClick={() => setIsDeleteModalOpen(false)} 
-                            style={{ ...buttonStyle, backgroundColor: '#e0e0e0', color: '#333' }}
-                        >
+                        <button onClick={() => setIsDeleteModalOpen(false)} style={{ ...actionBtnBase, backgroundColor: '#e6e6e6', color: '#333' }}>
                             Manter
                         </button>
-                        <button 
-                            onClick={handleConfirmDelete} 
-                            style={{ ...buttonStyle, backgroundColor: '#DC3545', color: 'white' }}
-                        >
+                        <button onClick={handleConfirmDelete} style={{ ...actionBtnBase, backgroundColor: '#DC3545', color: 'white' }}>
                             Excluir Permanentemente
                         </button>
                     </div>

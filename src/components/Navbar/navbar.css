@@ -1,8 +1,8 @@
 
 .navbar {
     align-items: center;
-    background-color: rgb(11, 41, 60);
-    color: #D9D9D9;
+    background-color: #9ED9D9;
+    color: #0d2d41;
     display: flex;
     font-size: 16px;
     justify-content: space-between;
@@ -18,7 +18,7 @@
      width: 48px;
      height: 38px;
      border-radius: 15px;
-     border:3px solid rgb(11, 41, 60);
+     border:3px solid #0d2d41;
      
 }
 
@@ -62,7 +62,7 @@
      width: 200px;
      height: 38px;
      border-radius: 15px;
-     border:3px solid #0B293C;
+     border:3px solid #0d2d41;
     
 }
 
@@ -83,7 +83,7 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  color: #0B293C;
+  color: #0d2d41;
   font-size: 18px;
   font-weight: bold;
 }
