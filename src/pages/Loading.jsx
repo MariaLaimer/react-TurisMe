@@ -63,7 +63,7 @@ export default function Loading() {
         <div className="mb-20">
           <div 
             className="relative bg-[#D9D9D9] rounded-[30px] flex flex-col items-center justify-center p-8 shadow-lg"
-            style={{ width: '276px', height: '217px' }}
+            style={{ width: '260px', height: '180px' }}
           >
             <p 
               className={`text-black font-bold text-xl text-center leading-tight transition-opacity duration-500 ease-in-out ${isFading ? 'opacity-0' : 'opacity-100'}`}
