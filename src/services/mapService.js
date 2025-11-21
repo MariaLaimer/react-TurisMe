@@ -8,9 +8,8 @@ const getConfig = (token) => ({
 
 export async function getPoints(token) {
   try {
-    const response = await axios.get(BASE_URL, getConfig(token)); 
 
-    return response.data.map(point => ({
+    const points = response.data.map(point => ({
       id: point.id,
       title: point.description,
       favorite: point.favorite,

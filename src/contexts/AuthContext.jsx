@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import Loading from "../pages/Loading";
 
 const AuthContext = createContext();
@@ -11,7 +11,7 @@ export function AuthProvider({ children }) {
 
   const [user, setUser] = useState({});
   const [token, setToken] = useState(sessionStorage.getItem("token") || null);
-  const [isAuthReady, setIsAuthReady] = useState(false); // NOVO ESTADO
+  const [isAuthReady, setIsAuthReady] = useState(false);
 
 
   useEffect(() => {
@@ -38,7 +38,7 @@ export function AuthProvider({ children }) {
     setUser(userObj);
 
   }
-  // Salva no user sempre que atualizar a página
+
   useEffect(() => {
     if (user.token) return;
     const storedUser = sessionStorage.getItem("user");
@@ -47,8 +47,6 @@ export function AuthProvider({ children }) {
     }
 
   },[]) 
- 
-  // Função para logout
 
   function logout() {
     setToken(null);

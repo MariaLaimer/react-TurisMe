@@ -1,4 +1,3 @@
-/* Fundo escuro atrás do menu */
 .menu-overlay {
   position: fixed;
   inset: 0;
@@ -14,7 +13,6 @@
   pointer-events: all;
 }
 
-/* Menu lateral */
 .side-menu {
   position: fixed;
   top: 0;
@@ -41,7 +39,7 @@
   left: 0;
 }
 
-/* Header do usuário (compacto) */
+
 .menu-header {
   width: 100%;
   background: #173840;

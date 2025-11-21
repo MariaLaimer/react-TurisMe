@@ -1,17 +1,3 @@
-/*import "./navbar.css";
-import { useAuth } from "../../contexts/AuthContext";
-
-export function Navbar() {
-    const { logout } = useAuth();
-
-    return (
-        <header className="navbar">
-            <div>Nome do aplicativo</div>
-            <button className="close" onClick={logout}>X</button>
-        </header>
-    );
-} */
-
 import "./navbar.css";
 import { useAuth } from "../../contexts/AuthContext";
 import { IoIosSearch } from "react-icons/io";
@@ -20,7 +6,6 @@ import { IoPersonSharp } from "react-icons/io5";
 import { useState } from "react";
 
 export function Navbar({ onMenuClick }) {
-  const { logout, } = useAuth();
   const [searchOpen, setSearchOpen] = useState(false);
 
 

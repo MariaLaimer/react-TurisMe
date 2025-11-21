@@ -13,7 +13,6 @@ export const MainMenu = ({ open, onClose, user }) => (
 
       <div className="menu-header"><div className="menu-avatar-icon"><IoPersonSharp color="#0B293CCC" size={32} /></div><h3>{user?.name || "Nome Usuário"}</h3></div>
 
-      <button className="menu-item"><RxExit size={28}/> Sair</button>
       <button className="menu-item"><MdTravelExplore size={28}/> Meu Perfil Viajante</button>
       <button className="menu-item"><MdOutlineSettings size={28}/> Configurações Gerais</button>
       <button className="menu-item"><MdOutlineSecurity size={28}/> Dados e Privacidade</button>
