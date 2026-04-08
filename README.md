@@ -1,5 +1,5 @@
 
-# Turis.Me 🗺 - Atitus Maps
+# Turis.Me 🗺 - Maps
 
 ![Image](https://github.com/user-attachments/assets/2504003b-4970-4875-9562-04fe84a924ab)
 
