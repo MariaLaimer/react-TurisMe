@@ -3,10 +3,16 @@
 
 ![Image](https://github.com/user-attachments/assets/2504003b-4970-4875-9562-04fe84a924ab)
 
+## Protótipos de Baixa e Alta Fidelidade no Figma:
+
+
+![Image](https://github.com/user-attachments/assets/0c9ff029-f2aa-4906-8646-40551ed433a8)
+
+
 ## Sobre o Projeto:
 
 
-O **Turis.Me - Atitus Maps** é uma aplicação web de **fins didáticos** que permite visualizar e cadastrar pontos geográficos em um mapa interativo. Usuários autenticados podem adicionar ou atualizar novos pontos clicando no mapa, que são salvos em um backend e exibidos para todos. Aparência baseada no projeto de alta fidelidade realizado pelo Figma.
+O **Turis.Me - Maps** é uma aplicação web de **fins didáticos** desenvolvida com React que permite visualizar e cadastrar pontos geográficos em um mapa interativo. Usuários autenticados podem adicionar ou atualizar novos pontos clicando no mapa, que são salvos em um backend e exibidos para todos. Aparência baseada no projeto de alta fidelidade realizado pelo Figma.
 
 
 ## Funcionalidades:
